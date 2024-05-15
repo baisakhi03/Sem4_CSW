@@ -38,8 +38,6 @@ public class q8 {
         System.out.println("Adjacency List:");
         for (int i = 0; i < V; ++i) {
             System.out.print(i + " -> ");
-            for (Integer neighbor : adjList[i]) {
-                System.out.print(neighbor + " ");
             }
             System.out.println();
         }
