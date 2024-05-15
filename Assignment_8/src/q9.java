@@ -42,7 +42,7 @@ class Graph {
         System.out.println("Enter the number of edges:");
         int edges = scanner.nextInt();
 
-        System.out.println("Enter " + edges + " edges (format: from to):");
+    
         for (int i = 0; i < edges; i++) {
             int from = scanner.nextInt();
             int to = scanner.nextInt();
