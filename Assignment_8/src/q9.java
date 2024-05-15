@@ -38,14 +38,14 @@ class Graph {
     // Read graph and store it in adjacency list representation
     public void readGraph(Scanner scanner) {
         System.out.println("Enter the number of vertices:");
-        int vertices = scanner.nextInt();
+        int vertices = sc.nextInt();
         System.out.println("Enter the number of edges:");
-        int edges = scanner.nextInt();
+        int edges = sc.nextInt();
 
     
         for (int i = 0; i < edges; i++) {
-            int from = scanner.nextInt();
-            int to = scanner.nextInt();
+            int from = sc.nextInt();
+            int to = sc.nextInt();
             addEdge(from, to);
         }
     }
@@ -53,20 +53,15 @@ class Graph {
 
 public class q9 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         // Create a graph
         System.out.println("Enter the number of vertices:");
-        int V = scanner.nextInt();
+        int V = sc.nextInt();
         Graph graph = new Graph(V);
-
-        // Read graph
-        graph.readGraph(scanner);
-
-        // Perform depth-first search (DFS)
-        System.out.println("Depth-First Search (DFS) starting from vertex 0:");
+        System.out.println("DFS starts from vertex 0:");
         graph.DFS(0);
 
-        scanner.close();
+    
     }
 }
