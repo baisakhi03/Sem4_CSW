@@ -6,7 +6,7 @@ public class q6 {
         ArrayList<Object> obj = new ArrayList<>();
 
         for (int i = 0; i < 1000000; i++) {
-            obj.add(new byte[1024]); // Creating objects of size 1KB
+            obj.add(new byte[1024]); 
             if (i % 10000 == 0) {
                 printHeapInfo(startTime);
             }
