@@ -2,47 +2,36 @@
 import java.util.*;
 
 class Graph {
-    private int V; // Number of vertices
-    private LinkedList<Integer>[] adjList; // Adjacency list
-
-    public Graph(int v) {
-        V = v;
-        adjList = new LinkedList[v];
-        for (int i = 0; i < v; ++i) {
+    private int Vertices;
+    private LinkedList<Integer>[] adjList; 
+    public Graph(int vertices) {
+      Vertices = vertices;
+       adjList = new LinkedList[v];
+        for (int i = 0; i < vertices; ++i) {
             adjList[i] = new LinkedList<>();
         }
     }
-
-    // Add an edge to the graph
-    public void addEdge(int v, int w) {
-        adjList[v].add(w);
+    public void addEdge(int vertices, int w) {
+        adjList[vertices].add(w);
     }
-
-    // Depth-first search (DFS)
     public void DFS(int v) {
-        boolean[] visited = new boolean[V];
-        DFSUtil(v, visited);
+      boolean[] visited = new boolean[Vertices];
+        DFSUtil(vertices, visited);
     }
-
-    private void DFSUtil(int v, boolean[] visited) {
-        visited[v] = true;
-        System.out.print(v + " ");
-
-        for (int neighbor : adjList[v]) {
+    private void DFSUtil(int vertices, boolean[] visited) {
+       visited[vertices] = true;
+       System.out.print(vertices + " ");
+        for (int neighbor : adjList[vertices]) {
             if (!visited[neighbor]) {
                 DFSUtil(neighbor, visited);
             }
         }
     }
-
-    // Read graph and store it in adjacency list representation
-    public void readGraph(Scanner scanner) {
+    public void readGraph(Scanner sc) {
         System.out.println("Enter the number of vertices:");
         int vertices = sc.nextInt();
         System.out.println("Enter the number of edges:");
         int edges = sc.nextInt();
-
-    
         for (int i = 0; i < edges; i++) {
             int from = sc.nextInt();
             int to = sc.nextInt();
@@ -54,11 +43,9 @@ class Graph {
 public class q9 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // Create a graph
         System.out.println("Enter the number of vertices:");
-        int V = sc.nextInt();
-        Graph graph = new Graph(V);
+        int Vertices = sc.nextInt();
+        Graph graph = new Graph(Vertices);
         System.out.println("DFS starts from vertex 0:");
         graph.DFS(0);
 
