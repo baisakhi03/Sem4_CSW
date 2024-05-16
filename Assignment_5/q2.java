@@ -11,7 +11,7 @@
     }
 
     public static void main(String[] args) {
-        // Create two instances of ReassigningReference
+        
         q2 ob1 = new Q2("Obj 1");
         q2 ob2 = new Q2("Obj 2");
         ob1 = ob2;
