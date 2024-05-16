@@ -1,9 +1,7 @@
-public class q4 {
-
-    private String name;
-
-    public q4(String name) {
-        this.name = name;
+public class Q4 {
+private String n;
+  public Q4(String n) {
+        this.n= n;
     }
 
     public void finalize() {
@@ -11,9 +9,7 @@ public class q4 {
     }
 
     public static void main(String[] args) {
-        // Creating an anonymous object
-        new q4("Anonymous Object");
-
-        System.gc();
+    new Q4("Anonymous Obj");
+    System.gc();
     }
 }
