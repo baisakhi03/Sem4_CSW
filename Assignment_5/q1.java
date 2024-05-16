@@ -1,25 +1,25 @@
-public class q1 {
-    private String name;
+public class Q1 {
+ private String n;
 
-    public q1(String name) {
-        this.name = name;
+    public Q1(String n) {
+        this.n = n;
     }
 
     public void show() {
-        new q1("InnerObject").display();
+     new Q1("Object").display();
     }
 
     public void display() {
-        new q1("InnerInnerObject");
+     new Q1("InnerObject");
     }
 
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("Object " + name + " is being garbage collected.");
+    System.out.println("Object " + name + " is being garbage collected.");
     }
 
     public static void main(String[] args) {
-        new q1("MainObject").show();
-        System.gc();
+     new Q1("MainObject").show();
+     System.gc();
     }
 }
