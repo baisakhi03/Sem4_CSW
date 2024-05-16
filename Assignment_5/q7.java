@@ -1,8 +1,8 @@
 class Student {
-    String name;
+    String n;
 
-    public Student(String name) {
-        this.name = name;
+    public Student(String n) {
+        this.n = n;
     }
 
     @Override
@@ -14,8 +14,8 @@ class Student {
 
 public class q7 {
     public static void main(String[] args) {
-        Student student = new Student("John");
-        student = null; // Making the object eligible for garbage collection
-        System.gc(); // Initiating garbage collection
+        Student s = new Student("Jimin");
+        s = null; 
+        System.gc(); 
     }
 }
