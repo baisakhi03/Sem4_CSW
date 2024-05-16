@@ -8,7 +8,7 @@ public class q10 {
             System.out.println("1. To lowercase\n2. To uppercase\n3. Search character\n4. Concatenate\n5. Exit");
                     System.out.print("Choose an operation: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine(); 
             switch (choice) {
                 case 1:
                     System.out.println(str.toLowerCase());
