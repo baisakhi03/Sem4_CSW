@@ -1,20 +1,18 @@
-public class q3 {
+public class Q3 {
 
-    private String name;
+    private String n;
 
-    public q3(String name) {
-        this.name = name;
+    public Q3(String n) {
+        this.n= n;
     }
 
     public void finalize() {
-        System.out.println("Object " + name + " has been garbage collected.");
+    System.out.println("Object " + name + " has been garbage collected.");
     }
 
     public static void main(String[] args) {
-        q3 obj = new q3("Example Object");
-
-        obj = null;
-
+        Q3 ob = new Q3("Example");
+        ob = null;
         System.gc();
     }
 }
