@@ -2,35 +2,28 @@ package assignment8;
 import java.util.*;
 
 class Graph1 {
-    private int V; // Number of vertices
+    private int Vertices;
     private LinkedList<Integer>[] adjList; 
 
-    public Graph1(int v) {
-        V = v;
-        adjList = new LinkedList[v];
-        for (int i = 0; i < v; ++i) {
+    public Graph1(int vertices) {
+        Vertices = vertices;
+        adjList = new LinkedList[vertices];
+        for (int i = 0; i < vertices; ++i) {
             adjList[i] = new LinkedList<>();
         }
     }
-
-    // Add an edge to the graph
-    public void addEdge(int v, int w) {
-        adjList[v].add(w);
+    public void addEdge(int vertices, int w) {
+        adjList[vertices].add(w);
     }
-
-    // Breadth-first search (BFS)
     public void BFS(int start) {
-        boolean[] visited = new boolean[V];
+        boolean[] visited = new boolean[Vertices];
         ArrayDeque<Integer> queue = new ArrayDeque<>();
-
         visited[start] = true;
         queue.add(start);
-
         while (!queue.isEmpty()) {
-            int v = queue.poll();
-            System.out.print(v + " ");
-
-            for (int neighbor : adjList[v]) {
+            int vertices = queue.poll();
+            System.out.print(vertices + " ");
+            for (int neighbor : adjList[vertices]) {
                 if (!visited[neighbor]) {
                     visited[neighbor] = true;
                     queue.add(neighbor);
@@ -38,9 +31,7 @@ class Graph1 {
             }
         }
     }
-
-
-    public void readGraph(Scanner sc) {
+   public void readGraph(Scanner sc) {
         System.out.println("Enter the number of vertices:");
         int vertices = sc.nextInt();
         System.out.println("Enter the number of edges:");
@@ -57,17 +48,11 @@ class Graph1 {
 
 public class q10 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        
+        Scanner sc = new Scanner(System.in);    
         System.out.println("Enter the number of vertices:");
-        int V = sc.nextInt();
-        Graph1 graph = new Graph1(V);
-
-       
-        graph.readGraph(sc);
-
-        
+        int Vertices = sc.nextInt();
+        Graph1 graph = new Graph1(Vertices);
+        graph.readGraph(sc); 
         System.out.println("Breadth-First Search (BFS) starting from vertex 0:");
         graph.BFS(0);
 
