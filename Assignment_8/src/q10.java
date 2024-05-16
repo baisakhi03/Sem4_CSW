@@ -3,7 +3,7 @@ import java.util.*;
 
 class Graph1 {
     private int V; // Number of vertices
-    private LinkedList<Integer>[] adjList; // Adjacency list
+    private LinkedList<Integer>[] adjList; 
 
     public Graph1(int v) {
         V = v;
@@ -39,17 +39,17 @@ class Graph1 {
         }
     }
 
-    // Read graph and store it in adjacency list representation
-    public void readGraph(Scanner scanner) {
+
+    public void readGraph(Scanner sc) {
         System.out.println("Enter the number of vertices:");
-        int vertices = scanner.nextInt();
+        int vertices = sc.nextInt();
         System.out.println("Enter the number of edges:");
-        int edges = scanner.nextInt();
+        int edges = sc.nextInt();
 
         System.out.println("Enter " + edges + " edges (format: from to):");
         for (int i = 0; i < edges; i++) {
-            int from = scanner.nextInt();
-            int to = scanner.nextInt();
+            int from = sc.nextInt();
+            int to = sc.nextInt();
             addEdge(from, to);
         }
     }
@@ -57,20 +57,20 @@ class Graph1 {
 
 public class q10 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        // Create a graph
+        
         System.out.println("Enter the number of vertices:");
-        int V = scanner.nextInt();
+        int V = sc.nextInt();
         Graph1 graph = new Graph1(V);
 
-        // Read graph
-        graph.readGraph(scanner);
+       
+        graph.readGraph(sc);
 
-        // Perform breadth-first search (BFS)
+        
         System.out.println("Breadth-First Search (BFS) starting from vertex 0:");
         graph.BFS(0);
 
-        scanner.close();
+      
     }
 }
