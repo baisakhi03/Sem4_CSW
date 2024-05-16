@@ -2,7 +2,7 @@
 class TreeNode {
     int data;
     TreeNode left;
-	TreeNode right;
+    TreeNode right;
 
     public TreeNode(int data) {
         this.data = data;
@@ -12,12 +12,10 @@ class TreeNode {
 
 public class q5 {
     TreeNode root;
-
     public TreeNode createTree(int[] arr) {
         return createTree1(arr, 0, arr.length - 1);
     }
-
-    private TreeNode createTree1(int[] arr, int start, int end) {
+     private TreeNode createTree1(int[] arr, int start, int end) {
         if (start > end)
             return null;
 
@@ -31,10 +29,10 @@ public class q5 {
     }
 
     public void inOrderTraversal(TreeNode root) {
-        if (root != null) {
-            inOrderTraversal(root.left);
-            System.out.print(root.data + " ");
-            inOrderTraversal(root.right);
+      if (root != null) {
+         inOrderTraversal(root.left);
+         System.out.print(root.data + " ");
+         inOrderTraversal(root.right);
         }
     }
 
