@@ -3,11 +3,10 @@ import java.util.ArrayList;
 public class q6 {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-
-        ArrayList<Object> objects = new ArrayList<>();
+        ArrayList<Object> obj = new ArrayList<>();
 
         for (int i = 0; i < 1000000; i++) {
-            objects.add(new byte[1024]); // Creating objects of size 1KB
+            obj.add(new byte[1024]); // Creating objects of size 1KB
             if (i % 10000 == 0) {
                 printHeapInfo(startTime);
             }
